@@ -41,8 +41,10 @@ void Player::send_packet(void* packet)
 
 	WSA_OVER_EX* _wsa_send_over = new WSA_OVER_EX(OP_SEND, buf[0], packet);
 
-	if(_state == STATE::ST_INGAME)
-		WSASend(_socket, &_wsa_send_over->_wsabuf, 1, NULL, 0, &_wsa_send_over->_wsaover, NULL);
+	if (_state == STATE::ST_INGAME)
+	{
+		int ret = WSASend(_socket, &_wsa_send_over->_wsabuf, 1, NULL, 0, &_wsa_send_over->_wsaover, NULL);
+	}
 }
 
 void Player::set_player_location(float x, float y, float z)

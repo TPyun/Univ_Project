@@ -40,6 +40,7 @@ void WSA_OVER_EX::processpacket(int client_id, unsigned char* pk)
 	case CS_PACKET_LOGIN:
 	{
 		{
+			std::cout << "login player : " << client_id << std::endl;
 			cs_packet_login* packet = reinterpret_cast<cs_packet_login*>(pk);
 			send_login_ok_packet(client_id);
 			send_citizen_First_create_packet(client_id);
@@ -50,7 +51,7 @@ void WSA_OVER_EX::processpacket(int client_id, unsigned char* pk)
 			sc_packet_matching packet;
 			packet.size = sizeof(packet);
 			packet.type = SC_PACKET_MATCHING;
-			packet.connectplayer = room_player_cnt;
+			packet.connectplayer = room_player_cnt;	
 			packet.maxplayer = ROOMPLAYER;
 			all_player_sendpacket(&packet);
 		}
@@ -350,6 +351,12 @@ void WSA_OVER_EX::processpacket(int client_id, unsigned char* pk)
 		{
 			player->player_gameover();
 		}
+		break;
+	}
+	case CS_PACKET_TESTING:
+	{
+		cs_packet_testing* packet = reinterpret_cast <cs_packet_testing*> (pk);
+		std::cout << "error code : " << packet->error_num << std::endl;
 		break;
 	}
 	default:

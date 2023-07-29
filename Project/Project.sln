@@ -51,5 +51,14 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{0601A326-2CC7-3536-BFFE-BBE0F4D02109} = {233774A8-CC9D-3FA9-86D1-90573E92B704}
 		{10823282-5775-340B-9652-7C100E01D2F8} = {DE1F8B53-6C02-3C13-9101-A7C8D96F3FF6}
+<<<<<<< Updated upstream
+=======
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9FA54A79-E152-420F-BF25-F2B723487DDF}
+	EndGlobalSection
+	GlobalSection(ddbf523f-7eb6-4887-bd51-85a714ff87eb) = preSolution
+		AvailablePlatforms = Win64
+>>>>>>> Stashed changes
 	EndGlobalSection
 EndGlobal

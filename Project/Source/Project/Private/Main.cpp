@@ -10,9 +10,9 @@
 #include "CoreMinimal.h"
 #include "Components/SceneComponent.h"
 #include "Camera/CameraComponent.h"
+#include "../ProjectGameModeBase.h"
 #include "GenericPlatform/GenericPlatformProcess.h"
 #include "Components/InstancedStaticMeshComponent.h"
-
 FRunnableThread* NetworkThread;
 
 AMain::AMain()
@@ -93,12 +93,12 @@ void AMain::BeginPlay()
 			break;
 		}
 	}
-
-
-	//Newtwork
+	APlayerController* PlayerController = UGameplayStatics::GetPlayerController(GetWorld(), 0);
+	
 	Network = new FSocketThread();
 	Network->_MainClass = this;
 	Network->_BuildManager = BuildManager;
+	Network->_MyController = Cast<AMyPlayerController>(PlayerController);
 	NetworkThread = FRunnableThread::Create(Network, TEXT("MyThread"), 0, TPri_BelowNormal);
 	Research = reinterpret_cast<AResearch*>(Research);
 	Research->set_NetWork(Network);

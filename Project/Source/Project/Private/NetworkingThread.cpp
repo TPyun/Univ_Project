@@ -79,10 +79,17 @@ FSocketThread::FSocketThread()
 	{
 		//exit(-1);
 	}
+<<<<<<< Updated upstream
+=======
+	
+	IsRunning = true;
+>>>>>>> Stashed changes
 }
 
 uint32_t FSocketThread::Run()
 {
+	_MyController->maxplayercount = 1;
+	_MyController->connectplayercount = 1;
 	while (IsRunning)
 	{
 		SleepEx(10, true);

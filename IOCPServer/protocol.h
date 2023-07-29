@@ -85,6 +85,7 @@ constexpr int city_size = 100;
 #define CS_PACKET_DECLARATION_WAR	110
 
 #define CS_PACKET_SPRINKLER_STATUS	120
+#define CS_PACKET_TESTING			17
 
 #define CS_PACKET_CALL_CHEAT_KEY	255
 
@@ -367,6 +368,15 @@ struct cs_packet_cheatkey
 	unsigned char type = CS_PACKET_CALL_CHEAT_KEY;
 	int cheat_type;
 };
+
+struct cs_packet_testing
+{
+	unsigned char size = sizeof(cs_packet_testing);
+	unsigned char type = CS_PACKET_TESTING;
+	int error_num;
+};
+
+
 
 //////////////////////////////////////////// 서버
 

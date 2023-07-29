@@ -1561,7 +1561,7 @@ public:
 			wind_direction.y = 0;
 			break;
 		}
-		cout << "Wind Direcyion Decide: " << "X: " << wind_direction.x << " " << "Y: " << wind_direction.y << endl;
+		//cout << "Wind Direcyion Decide: " << "X: " << wind_direction.x << " " << "Y: " << wind_direction.y << endl;
 		for (int i = 0; i < MAXPLAYER; i++)
 		{
 			Player* player = reinterpret_cast<Player*>(objects[i]);
@@ -1573,6 +1573,6 @@ public:
 	{
 		if (wind_speed + additional_speed > 0)
 			wind_speed += additional_speed;
-		cout << "Wind Speed Modified: " << wind_speed << " Additional Speed: " << additional_speed << endl;
+		//cout << "Wind Speed Modified: " << wind_speed << " Additional Speed: " << additional_speed << endl;
 	}
 };

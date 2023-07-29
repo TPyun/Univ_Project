@@ -102,11 +102,11 @@ DWORD WINAPI terrain_change(LPVOID arg)
 			spend_time = (double)(end - start) / CLOCKS_PER_SEC;
 			if (spend_time > 0.9) {
 				terrain->modify_wind_speed(-1);
-				cout << "걸린시간: " << spend_time << endl;
+				//cout << "걸린시간: " << spend_time << endl;
 			}
 			else if (spend_time < 0.5) {
 				terrain->modify_wind_speed(1);
-				cout << "걸린시간: " << spend_time << endl;
+				//cout << "걸린시간: " << spend_time << endl;
 			}
 
 			is_terrain_changed = true;
