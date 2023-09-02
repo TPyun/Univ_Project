@@ -498,7 +498,7 @@ void round_shaped_cool_cuda(unsigned char** temperature_map_device, II object_po
 	int distance = sqrt(pow(coo.x - (int)blockDim.x / 2, 2) + pow(coo.y - (int)blockDim.y / 2, 2));
 	if (distance <= blockDim.x / 2) {
 		//회당 1도씩 낮춤
-		temperature_map_device[object_pos.x + threadIdx.x - blockDim.x / 2][object_pos.y + threadIdx.y - blockDim.y / 2] -= 1 * temperature_divide;
+		temperature_map_device[object_pos.x + threadIdx.x - blockDim.x / 2][object_pos.y + threadIdx.y - blockDim.y / 2] -= (int)(efficiency * temperature_divide);
 		//최고 최저 온도 설정
 		temperature_map_device[object_pos.x + threadIdx.x - blockDim.x / 2][object_pos.y + threadIdx.y - blockDim.y / 2] = max(temperature_map_device[object_pos.x + threadIdx.x - blockDim.x / 2][object_pos.y + threadIdx.y - blockDim.y / 2], 20 * temperature_divide);
 		temperature_map_device[object_pos.x + threadIdx.x - blockDim.x / 2][object_pos.y + threadIdx.y - blockDim.y / 2] = min(temperature_map_device[object_pos.x + threadIdx.x - blockDim.x / 2][object_pos.y + threadIdx.y - blockDim.y / 2], 60 * temperature_divide);
