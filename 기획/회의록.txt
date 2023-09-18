@@ -807,3 +807,44 @@ https://docs.google.com/presentation/d/1FchpIadTJxtuOZUm9QAFtYQZ0KmarfQbwC1OrYaZ
  
 4. 다음미팅
  - 9월 18일 월요일 오후 12시 30분
+
+2023-09-18
+----------
+1. 김강휘 : NC 코딩테스트 3문제 중 1문제
+ - 포트폴리오 : 
+ - 비효율적인 코드이다 : Criticial Section의 실행시간이 너무 길다. 
+    std::shared_lock<std::shared_mutex> lock(npc->_vl);
+    for (auto p_id : npc->_view_list) {
+
+   =>
+
+   npv->_vl.lock();
+   auto temp_vl = npc->view_list;
+   npc->_vl.unlock();
+   for (auto p_id : temp_vl) {
+
+
+2. 김지호
+ - 배치가 좀 산만한데, 비주얼을 신경쓸 것
+ - 넷겜플 프로젝트에서 한장정도 내용추가
+
+3. 윤우영
+ - 고대 : 인원 참, 성균관/아주 답장 없음, 성균관:ML로 전환, 
+ - 서성한, 중경외시, 건동홍 까지는 컨택해 보자.
+ - 논문
+  * 
+ - 포트폴리오
+   * 온도변화/지형시각화/온도시각화 : 말만 적으면 안되고, 시청각자료(그림) 추가
+  * 게임서버에서 CUDA를 사용하는 것은 동접에 너무 불리하지 않은가????
+ * https://www.slideshare.net/suminb/durango-opencl
+ 
+ * NPC비활성화, Stored Procedure사용시 성능향상등 구체적인 수치 필요.
+
+ * 마리오 움짤.
+
+4. 매의 눈으로 공채 찾기
+ - 넥슨, 넷마블, 크패프톤 등...
+
+5 다음미팅
+ - 10월 16일 월요일 오후 12시 30분 
+ 
