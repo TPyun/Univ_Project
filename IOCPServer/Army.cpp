@@ -71,7 +71,7 @@ void Army::set_army_move()
 					_arrival_x = _x;
 					_arrival_y = _y;
 				}
-				enemy_army->_hp -= 5 + _army_type * 10;
+				enemy_army->_hp -= 20 + _army_type * 10;
 				if (enemy_army->_hp < 0)
 				{
 					player->kill_citizen += 5;
