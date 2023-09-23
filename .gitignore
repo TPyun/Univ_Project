@@ -1,6 +1,8 @@
 ### UnrealEngine ###
 # Terrain Svae Files
 IOCPServer/TerrainFile/
+IOCPServer/TerrainImage/
+IOCPServer/TemperatureImage/
 
 # Visual Studio 2015 user specific files
 .vs/
